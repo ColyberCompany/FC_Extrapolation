@@ -8,7 +8,7 @@
 #include <FC_LinearExtrapolation.h>
 
 // FC_Extrapolation is a abstract class that can contain different extrapolation methods
-FC_Extrapolation& extrapolator = FC_LinearExtrapolation();
+FC_Extrapolation* extrapolator = new FC_LinearExtrapolation();
 
 
 int temp = 3;
@@ -27,7 +27,7 @@ void loop()
     // Add new measurement 
     if (temp >= 3)
     {
-        extrapolator.addNewMeasuredValue(measurement);
+        extrapolator->addNewMeasuredValue(measurement);
         temp = 1;
     }
     else
@@ -37,7 +37,7 @@ void loop()
     Serial.print("MeasuredValue:");
     Serial.print(measurement);
     Serial.print(" Estimation:");
-    Serial.println(extrapolator.getCurrentEstimation());
+    Serial.println(extrapolator->getCurrentEstimation());
 
 
     delay(20);
