@@ -8,12 +8,7 @@
 #ifndef _FC_LINEAREXTRAPOLATION_h
 #define _FC_LINEAREXTRAPOLATION_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
-	#include "arduino.h"
-#else
-	#include "WProgram.h"
-#endif
-
+#include "arduino.h"
 #include <FC_Extrapolation.h>
 
 
